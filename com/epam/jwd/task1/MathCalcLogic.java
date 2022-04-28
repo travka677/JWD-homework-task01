@@ -5,6 +5,9 @@ import java.util.Random;
 public class MathCalcLogic {
 
     public double function(double a, double b, double c) {
+        if (a < 0 || b < 0 || c < 0) {
+            throw new RuntimeException("Incorrect value");
+        }
         double res;
 
         res = b + Math.sqrt(b*b + 4*a*c);
@@ -15,8 +18,8 @@ public class MathCalcLogic {
         return res;
     }
     public int[] union(int[] array1, int[] array2, int k) {
-        if (!MathCalcLogicValidator.validateInt(k, array1.length)) {
-            return new int[0];
+        if (k < 0 || k >= array1.length - 1) {
+            throw new RuntimeException("Incorrect value");
         }
         if (array2.length == 0) {
             return array1;
@@ -49,16 +52,4 @@ public class MathCalcLogic {
         return sum;
     }
 
-    public int[] getRandomIntegers(int amount, int upperBound) {
-        int[] integers = new int[amount];
-        Random random = new Random();
-
-        if (MathCalcLogicValidator.validateInt(amount) && MathCalcLogicValidator.validateInt(upperBound)) {
-            for (int i = 0; i < amount; i++) {
-                int num = random.nextInt(upperBound);
-                integers[i] = num;
-            }
-        }
-        return integers;
-    }
 }

@@ -14,11 +14,11 @@ public class Main {
     public static void main(String[] args) {
         MathCalcController controller = new MathCalcController();
 
-        controller.sum(100, 10, 3); // operation 1
+        controller.sum(); // operation 1
 
-        int[] num1 = {2, 3, 6, 7, 8, 0};
-        int[] num2 = {22, 6, 34, 9, 4, 1};
-        controller.union(num1, num2, 3); // operation 2
+        int[] numbers1 = {2, 3, 6, 7, 8, 0};
+        int[] numbers2 = {22, 6, 34, 9, 4, 1};
+        controller.union(numbers1, numbers2, 3); // operation 2
         controller.function(3.4, 2.0, 4.1); // operation 3
     }
 }
