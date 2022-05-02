@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class MathCalcInput {
 
     public int inputInteger(String message) {
+        @SuppressWarnings("resourses")
         Scanner input = new Scanner(System.in);
         int num;
 
